@@ -4,7 +4,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RabbitListernerService {
+public class RabbitListenerService {
 
     @RabbitListener(queues = "trademessages")
     public void receiveMessage(String message) {
