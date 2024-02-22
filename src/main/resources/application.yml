@@ -1,6 +1,39 @@
 spring:
+  application:
+    name: trading-data-gateway
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/dats_backend?reWriteBatchedInserts=true
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 15
+      idle-timeout: 30000
+      max-lifetime: 2000000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      pool-name: SpringBootJPAHikariCP
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+        enable_lazy_load_no_trans: true
+        order_inserts: true
+        order_updates: true
+        generate_statistics: false
+        jdbc:
+          batch_size: 1000000
+server:
+  shutdown: graceful
+  port: 5151
+logging:
+  level:
+    org.zalando.logbook: TRACE
