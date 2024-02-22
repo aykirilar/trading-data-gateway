@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.aykirilartrader</groupId>
 	<artifactId>trading-data-gateway</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>trading-data-gateway</name>
-	<description>Demo project for Spring Boot</description>
+	<description>AykTrader</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
