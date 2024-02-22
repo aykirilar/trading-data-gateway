@@ -33,7 +33,7 @@ spring:
           batch_size: 1000000
 server:
   shutdown: graceful
-  port: 5151
+  port: 80
 logging:
   level:
     org.zalando.logbook: TRACE
