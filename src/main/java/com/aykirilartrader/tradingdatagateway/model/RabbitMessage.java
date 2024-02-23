@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 @Table(name = "messages")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class RabbitMessage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
