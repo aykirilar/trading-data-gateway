@@ -11,6 +11,7 @@ import java.time.Duration;
 @Table(name = "users")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Users {
 
     @Id
