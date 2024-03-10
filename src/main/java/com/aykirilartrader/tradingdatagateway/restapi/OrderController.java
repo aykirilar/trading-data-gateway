@@ -2,31 +2,29 @@ package com.aykirilartrader.tradingdatagateway.restapi;
 
 import com.aykirilartrader.tradingdatagateway.exceptions.InvalidRequestException;
 import com.aykirilartrader.tradingdatagateway.service.DbService;
+import com.aykirilartrader.tradingdatagateway.service.DecisionMakerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Objects;
 
 @RestController
 @RequestMapping("/")
 public class OrderController {
-    private final DbService dbService;
-
-    public OrderController(DbService dbService) {
-        this.dbService = dbService;
-    }
+    @Autowired
+    private DecisionMakerService decisionMakerService;
 
     @GetMapping(path = "/check_order")
     public ResponseEntity<Objects> checkOrder(@RequestParam(value = "type") String type,
                                               @RequestParam(value = "user") String user,
                                               @RequestParam(value = "pair") String pair,
-                                              @RequestParam(value = "timespan") String timespan) throws InvalidRequestException {
+                                              @RequestParam(value = "timespan") String timespan) throws InvalidRequestException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         switch (type) {
-            case "check_order":
-                break;
             case "enter_buy":
+                decisionMakerService.control(12345, "BTC/USDT", "240");
                 break;
             case "enter_sell":
                 break;
