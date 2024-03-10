@@ -1,5 +1,7 @@
 package com.aykirilartrader.tradingdatagateway.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,21 +14,15 @@ import java.time.Duration;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Users {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private Integer leverage;
     @Column(name = "trade_on_off")
     private Boolean tradeOnOff;
-
-    @Column(name = "available_trade_timespan")
-    private Duration availableTradeTimespan;
-
     @Column(name = "candle_size")
-    private Duration candleSize;
-
+    private int candleSize;
     private String method;
 }

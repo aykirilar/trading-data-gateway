@@ -23,8 +23,7 @@ CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     leverage INT,
     trade_on_off BOOLEAN,
-    available_trade_timespan INTERVAL,
-    candle_size INTERVAL,
+    candle_size INT,
     method VARCHAR(255)
 );
 
