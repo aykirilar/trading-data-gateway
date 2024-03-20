@@ -7,10 +7,10 @@ spring:
     username: guest
     password: guest
   datasource:
-    url: jdbc:postgresql://localhost:5432/rabbit_trader_bridge?reWriteBatchedInserts=true
-    username: postgres
-    password: root
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:mysql://127.0.0.1:3306/aykirilar
+    username: aykirilar
+    password: aykirilar
+    driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       maximum-pool-size: 15
       minimum-idle: 15

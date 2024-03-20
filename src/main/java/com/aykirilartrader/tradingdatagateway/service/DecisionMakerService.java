@@ -40,16 +40,6 @@ public class DecisionMakerService {
             System.out.println("Indicator : " + item + ", Coefficient : " + ApplicationUtils.indicators.get(item).getConstructor().newInstance().calculateCoefficient());
             ApplicationUtils.indicators.get(item).getConstructor().newInstance().calculateCoefficient();
         }
-        /*Arrays.asList(user.getMethod().split(";")).forEach(item -> {
-            indicators.add(ApplicationUtils.indicators.get(item));
-        });
-        if (user != null) {
-            if (!user.getTradeOnOff()) {
-                // user yeni trade yapmayacak.
-            } else {
-
-            }
-        }*/
         return ApplicationUtils.ORDER.SELL_ENTER;
     }
 }
