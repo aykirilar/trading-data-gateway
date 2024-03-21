@@ -11,4 +11,5 @@ RUN apk add tzdata
 RUN rm -rf /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 COPY --from=build /usr/src/target/trading-data-gateway.jar /opt/proje/trading-data-gateway.jar
+#CMD ["sleep", "100000000"]
 CMD ["java","-jar", "/opt/proje/trading-data-gateway.jar"]

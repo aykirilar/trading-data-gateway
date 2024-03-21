@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS aykirilar;
+use aykirilar;
+
 CREATE TABLE IF NOT EXISTS messages (
     id SERIAL PRIMARY KEY,
     pair VARCHAR(255) NOT NULL,

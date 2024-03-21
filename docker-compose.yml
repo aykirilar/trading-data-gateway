@@ -19,7 +19,7 @@ services:
   app:
     build: .
     container_name: app
+    network_mode: "host"
     hostname: app
     depends_on:
       - mysql
-    network_mode: "host"
